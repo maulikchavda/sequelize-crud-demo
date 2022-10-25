@@ -22,9 +22,6 @@ const indexRoute = require('./src/routes')
 const response = require('./src/services/response')
 const { FAIL } = require('./src/services/constant')
 
-app.use('/',(req,res) => {
-  res.json({message:"HELLO THERE"})
-})
 app.use('/api', indexRoute)
 app.use((err, req, res, next) => {
   if (err) {

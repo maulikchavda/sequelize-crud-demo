@@ -1,10 +1,15 @@
 {
   "version": 2,
-  "name": "sequelize-crud",
   "builds": [
-    { "src": "./server.js", "use": "@vercel/node" }
+    {
+      "src": "index.js",
+      "use": "@now/node"
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/" }
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
   ]
 }
