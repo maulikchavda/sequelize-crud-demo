@@ -26,7 +26,7 @@ app.use('/',(req,res) => {
   res.json({message:"API IS WORKING"})
 })
 
-// app.use('/api', indexRoute)
+app.use('/api', indexRoute)
 
 app.use((err, req, res, next) => {
   if (err) {
