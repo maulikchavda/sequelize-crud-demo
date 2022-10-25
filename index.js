@@ -22,7 +22,7 @@ const indexRoute = require('./src/routes')
 const response = require('./src/services/response')
 const { FAIL } = require('./src/services/constant')
 
-app.use('/', indexRoute)
+app.use('/api', indexRoute)
 app.use((err, req, res, next) => {
   if (err) {
     return response.successResponseWithoutData(res, err.message, FAIL)
@@ -39,4 +39,6 @@ app.use((err, req, res, next) => {
 // }
 
 //
-app.listen(PORT)
+app.listen(PORT,() => {
+  console.log(`Sever started on port ${PORT}`)
+})
