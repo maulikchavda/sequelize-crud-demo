@@ -1,5 +1,5 @@
 
-service: sequelize-crud-demo
+service: sequelize-crud-demo-apis
 
 provider:
   name: aws
