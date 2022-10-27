@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 // const bodyParser = require('body-parser')
-// const serverless = require('serverless-http')
+const serverless = require('serverless-http')
 const cors = require('cors')
 const app = express()
 
@@ -22,10 +22,6 @@ const indexRoute = require('./src/routes')
 const response = require('./src/services/response')
 const { FAIL } = require('./src/services/constant')
 
-app.use('/',(req,res) => {
-  res.json({message:"API IS WORKING"})
-})
-
 app.use('/api', indexRoute)
 
 app.use((err, req, res, next) => {
@@ -34,16 +30,9 @@ app.use((err, req, res, next) => {
   }
 })
 
-// const handler = serverless(app)
-// module.exports.app = async (event, context) => {
-//   try {
-//     return await handler(event, context)
-//   } catch (error) {
-//     return error
-//   }
-// }
+module.exports.handler = serverless(app);
 
 //
-app.listen(PORT,() => {
-  console.log(`Sever started on port ${PORT}`)
-})
+// app.listen(PORT,() => {
+//   console.log(`Sever started on port ${PORT}`)
+// })

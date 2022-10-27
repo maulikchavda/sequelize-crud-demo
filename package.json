@@ -29,7 +29,9 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.5.1",
+    "serverless-domain-manager": "^6.1.0",
     "serverless-dotenv": "^1.0.0-beta.2",
+    "serverless-dotenv-plugin": "^4.0.2",
     "serverless-offline": "^11.1.3"
   }
 }
